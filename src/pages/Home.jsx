@@ -26,6 +26,7 @@ import Product from "../Component/Product";
 import Product1 from "../Component/Product1";
 import Footer from "../Component/Footer";
 import TopBar from "../Component/Topbar";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -194,7 +195,13 @@ function Home() {
       <div className="w-full bg-white py-20 px-6 md:px-24">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <motion.div {...fadeUp}>
-            <p className="text-xl font-semibold text-black">About Us</p>
+<Link
+  to="/about"
+  className="text-xl font-semibold text-black cursor-pointer"
+>
+  About Us
+</Link>
+
           </motion.div>
 
           <motion.div {...fadeUpDelay(0.2)}>

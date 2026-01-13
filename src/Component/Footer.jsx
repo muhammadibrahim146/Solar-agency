@@ -9,6 +9,7 @@ import {
   FaPhoneAlt,
   FaEnvelope,
 } from "react-icons/fa";
+import logoImage from "../assets/Group.png"
 
 const Footer = () => {
   return (
@@ -19,9 +20,7 @@ const Footer = () => {
         {/* LOGO + ABOUT */}
         <div>
           <div className="mb-4">
-            <span className="border border-red-600 px-3 py-1 text-red-600 font-bold tracking-widest">
-              DYNAMIC
-            </span>
+              <img src={logoImage} alt="Logo" className="h-16 w-auto" />
           </div>
 
           <p className="text-sm leading-relaxed">
