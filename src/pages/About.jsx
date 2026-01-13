@@ -232,9 +232,18 @@ We deliver assurance, performance, and progress.
       
       <motion.div {...fadeUp}>
               <div>
-                <div className="w-full ">
-                  <img src={Background} className="w-screen" />
-                </div>
+               <div className="w-full overflow-hidden">
+                <motion.img
+                  src={Background}
+                  className="w-[120%] max-w-none"
+                  animate={{ x: ["0%", "-20%"] }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                />
+              </div>
       
                
       

@@ -295,9 +295,18 @@ function Home() {
       {/* FEATURED PRODUCT Section */}
       <motion.div {...fadeUp}>
         <div>
-          <div className="w-full ">
-            <img src={Background} className="w-screen" />
-          </div>
+      <div className="w-full overflow-hidden">
+  <motion.img
+    src={Background}
+    className="w-[120%] max-w-none"
+    animate={{ x: ["0%", "-20%"] }}
+    transition={{
+      duration: 20,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+  />
+</div>
 
           <div className="text-center tex-xl mt-3 font-medium py-3 ">
             <p> Solar Energy Service</p>
