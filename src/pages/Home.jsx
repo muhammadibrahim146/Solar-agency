@@ -21,13 +21,17 @@ import Frame20 from "../assets/Frame20.png";
 import Frame21 from "../assets/Frame21.png";
 import Frame22 from "../assets/Frame22.png";
 import Background6 from "../assets/Background6.png";
-
+import ScrollRevealText from "../Component/ScrollRevealText";
 import Product from "../Component/Product";
 import Product1 from "../Component/Product1";
 import Footer from "../Component/Footer";
 import TopBar from "../Component/Topbar";
 import { Link } from "react-router-dom";
-
+import MovingStrip from "../Component/MovingStrip";
+import CountUp from "../Component/CountUp";
+import AboutSection from "../Component/AboutSection";
+import ProductFeature from "../Component/ProductFeature";
+import ProjectsSection from "../Component/ProjectSection";
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -172,167 +176,99 @@ function Home() {
   </ul>
 )}
 
+<div className="relative flex flex-col justify-center h-full min-h-[420px] px-6 md:px-20 text-white">
 
-        {/* Centered Content */}
-        <div className="flex flex-col justify-center items-center h-full space-y-6 px-4">
-          <motion.img
-            {...fadeUp}
-            src={textImage}
-            alt="Center Text"
-            className="h-32 md:h-48 lg:h-64"
-          />
+  {/* TEXT */}
+  <motion.p {...fadeUp} className="max-w-3xl text-sm md:text-base mb-4">
+    From 6 kW to 3.2 MW, we design and manufacture resistive and smart load banks
+    for data centers, generators, EV systems, UPS, and high-voltage testing.
+  </motion.p>
 
-          <motion.button
-            {...fadeUpDelay(0.3)}
-            className="self-start md:self-start bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300"
-          >
-            Get Started Now
-          </motion.button>
-        </div>
-      </div>
+  {/* HEADING */}
+  <motion.h1
+    {...fadeUpDelay(0.2)}
+    className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-wide mb-6"
+  >
+    RESISTIVE LOAD BANKS
+  </motion.h1>
 
-      {/* About Section */}
-      <div className="w-full bg-white py-20 px-6 md:px-24">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
-          <motion.div {...fadeUp}>
-<Link
-  to="/about"
-  className="text-xl font-semibold text-black cursor-pointer"
->
-  About Us
-</Link>
+  {/* BUTTON WRAPPER (LOCKED POSITION) */}
+  <motion.div
+    {...fadeUpDelay(0.4)}
+    className="
+      flex
+      justify-center
+      sm:justify-start
+      mt-4
+      pb-6
+    "
+  >
+    <button
+      className="
+        bg-red-600 hover:bg-red-700
+        text-white font-bold
+        py-3 px-8
+        rounded-lg
+        text-base sm:text-lg
+        transition duration-300
+      "
+    >
+      Get Started Now
+    </button>
+  </motion.div>
 
-          </motion.div>
+</div>
 
-          <motion.div {...fadeUpDelay(0.2)}>
-            <p className="text-lg md:text-2xl font-semibold leading-relaxed text-black">
-              We at <strong>ECOM Engineers Pvt. Ltd</strong> are{" "}
-              <span className="text-gray-400">mass producers of Resistive Load banks</span>.
-              <br />
-              <br />
-              Ranging from <strong>6 KW up to 200KW</strong>. These{" "}
-              <span className="text-gray-400">
-                Load banks are essential for Integrated System testing in Datacentre Server Halls.
-              </span>{" "}
-              Battery test Discharge & Generator Testing.{" "}
-              <span className="text-gray-400">
-                Electric vehicle Battery test discharge. Power Supplies Test for EV & Hybrid Vehicles.
-              </span>
-            </p>
+</div>
+<div className="w-full flex justify-start ml-3">
 
-            {/* Stats */}
-            <div className="flex gap-16 mt-16 flex-wrap">
-              <motion.div {...fadeUpDelay(0.3)}>
-                <h3 className="text-4xl font-bold text-black">100K+</h3>
-                <p className="text-gray-500 mt-2">Panels Installed</p>
-              </motion.div>
-              <motion.div {...fadeUpDelay(0.4)}>
-                <h3 className="text-4xl font-bold text-black">25K+</h3>
-                <p className="text-gray-500 mt-2">Plants Powered</p>
-              </motion.div>
-              <motion.div {...fadeUpDelay(0.5)}>
-                <h3 className="text-4xl font-bold text-black">16+</h3>
-                <p className="text-gray-500 mt-2">Years of Expertise</p>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
+  <div className="">
+    <AboutSection/>
 
-      {/* Products Section */}
-      <div className="w-full bg-white py-20 px-6 md:px-24">
-        <div className="grid md:grid-cols-2 gap-14 items-start">
-          <div className="relative flex justify-center md:justify-start">
-            <motion.img
-              {...fadeUp}
-              src={Container}
-              alt="Server Hall Load Bank"
-              className="w-[260px] md:w-[320px] rounded-xl shadow-md z-10"
-            />
-            <motion.img
-              {...fadeUpDelay(0.2)}
-              src={Rectangle}
-              alt="Load Bank Side View"
-              className="w-[200px] md:w-[260px] rounded-xl shadow-md absolute -bottom-8 right-0 md:right-20"
-            />
-          </div>
+  </div>
 
-          <motion.div {...fadeUpDelay(0.3)}>
-            <p className="text-sm text-gray-500 mb-3">Our products</p>
-
-            <h2 className="text-3xl md:text-4xl font-semibold text-black mb-6">
-              Server Hall <span className="text-gray-400">Load banks</span>
-            </h2>
-
-            <p className="text-gray-600 leading-relaxed mb-6">
-              Designed with High precision machines.
-              Heavy Duty Fans for Continuous operation @170CFM / KW
-              PROTECTION OFFERED: MINIATURE CIRCUIT BREAKERS FOR ALL STEPS
-              Fuse protection for Fan.
-              High Temperature withstand wires (Glass Fibre insulated wires).
-              Available in Rack mount Design up to 6KW Above 6KW Pedestal mounting.
-            </p>
-
-            <hr className="my-6" />
-
-            <ul className="space-y-4 text-gray-700 mb-8">
-              <li>✓ Range : 6KW – 9KW – 12KW – 12.6KW – 18KW</li>
-              <li>✓ Generator Test Banks : 100KW – 200KW</li>
-              <li>✓ IEC Plug 3 Pin – 32A with 3 Meter Long wire</li>
-            </ul>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-medium"
-            >
-              Get a Quote
-            </motion.button>
-          </motion.div>
-        </div>
-      </div>
-
+</div>
+<div className="w-full h-[1px] bg-gray-300 my-6"></div>
+<div className="lg:-ml-6 ">
+<ProductFeature/>
+</div>
       {/* FEATURED PRODUCT Section */}
       <motion.div {...fadeUp}>
         <div>
-      <div className="w-full overflow-hidden">
-  <motion.img
-    src={Background}
-    className="w-[120%] max-w-none"
-    animate={{ x: ["0%", "-20%"] }}
-    transition={{
-      duration: 20,
-      repeat: Infinity,
-      ease: "linear",
-    }}
-  />
-</div>
+    <div className="relative w-full overflow-hidden h-[70px] md:h-[90px]">
+          <motion.div
+            className="flex w-max"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              ease: "linear",
+              duration: 6, // 🔥 fast speed
+            }}
+          >
+            {/* duplicate images for infinite loop */}
+            {[1, 2].map((_, index) => (
+              <img
+                key={index}
+                src={Background}
+                alt="strip"
+                className="h-[70px] md:h-[90px] w-auto object-cover"
+              />
+            ))}
+          </motion.div>
+        </div>
 
-          <div className="text-center tex-xl mt-3 font-medium py-3 ">
-            <p> Solar Energy Service</p>
-          </div>
+         
 
-          <motion.h1 {...fadeUpDelay(0.2)} className="text-5xl text-center mt-5 font-semibold text-black mb-6">
-            FEATURED <span className="text-gray-400">PRODUCT</span>
-          </motion.h1>
-
-          <div className="text-center w-3/5 mx-auto ">
-            <motion.p {...fadeUpDelay(0.3)} className="text-xl text-gray-400 mb-2">
-              Switch to Solar. Save More. Live Clean. Enjoy lower bills, clean energy, and expert service
-            </motion.p>
-            <motion.p {...fadeUpDelay(0.4)} className="text-xl text-gray-400">
-              for homes, businesses, and beyond.
-            </motion.p>
-          </div>
+          
         </div>
       </motion.div>
 
       {/* Products Components */}
-      <motion.div {...fadeUpDelay(0.5)} className="mt-5">
+      <motion.div {...fadeUpDelay(0.5)} className="">
         <Product />
       </motion.div>
-      <motion.div {...fadeUpDelay(0.6)} className="mt-5">
-        <Product1 />
+      <motion.div {...fadeUpDelay(0.6)} className="">
+      
       </motion.div>
 
       {/* Horizontal Image */}
@@ -341,45 +277,105 @@ function Home() {
       </motion.div>
 
       {/* Projects Section */}
-      <motion.div {...fadeUpDelay(0.8)} className="mt-5">
-        <p className="text-center text-xl font-medium">Our Projects</p>
-      </motion.div>
-      <motion.div {...fadeUpDelay(0.85)}>
-        <p className="text-black text-center text-4xl font-medium mt-3">
-          BULK LOAD BANK 500KW<span className="text-gray-400">-3200KW Resistive or</span>
-        </p>
-        <p className="text-black text-center text-4xl font-medium mt-3">
-          With 0.8PF for generator<span className="text-gray-400"> testing.440V -11KV</span>
-        </p>
-      </motion.div>
-      <motion.div {...fadeUpDelay(0.9)} className="mt-5">
-        <p className="text-center text-xl text-gray-400">Ecom Engineers have successfully delivered and commissioned 11KV2MW</p>
-        <p className="text-center text-xl text-gray-400">Load Banks to Customer in INDIA</p>
-      </motion.div>
+      <ProjectsSection
+  Container7={Container7}
+  Container8={Container8}
+  Container9={Container9}
+/>
 
-      {/* Customer Logos */}
-      <motion.div {...fadeUpDelay(0.95)} className="flex justify-center items-center flex-wrap gap-6 mt-8 px-6">
-        {[Container7, Container8, Container9].map((img, idx) => (
-          <img key={idx} src={img} alt={`Customer ${idx}`} className="w-60 sm:w-64 md:w-72 lg:w-80 h-auto object-contain" />
-        ))}
-      </motion.div>
+<div className="w-full bg-[#f8f4f2] relative overflow-hidden">
+  {/* TOP SECTION */}
+  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch">
+    {/* LEFT IMAGE */}
+    <div className="w-full lg:w-[60%] h-[300px] lg:h-auto">
+      <img
+        src={Container10}
+        alt="Load Bank"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    {/* RIGHT CONTENT */}
+    <div className="w-full lg:w-[40%] bg-[#f9f5f3] px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+      <div>
+        <p className="text-sm sm:text-base text-gray-600 mb-2">
+          Trusted & Affordable
+        </p>
+
+        <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4 sm:mb-6">
+          11KV Load bank Smart feature
+        </h2>
+
+        <ul className="text-base sm:text-lg text-gray-800 leading-relaxed">
+          <li>Automatic Load Ramping Program by user</li>
+          <li>Monitoring & Control through tablet</li>
+          <br className="hidden sm:block" />
+          <li>Wireless Control Software Capable to Record And</li>
+          <li>Produce Graphs for Load Switched With Respect to time</li>
+          <br className="hidden sm:block" />
+          <li>Safety Features: All steps Are Protected For Overcurrent/</li>
+          <li>Shortcircuit / Ground Fault</li>
+          <br className="hidden sm:block" />
+          <li>Fan Controls: Auto Trip On Fan Motor Trip/Fan Monitoring</li>
+          <li>Exhaust: Vertical</li>
+          <li>IP Degree Of Protection: IP 44 Outdoor Weather Proof</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {/* 🔥 MOVING STRIP */}
+  <div className="absolute bottom-0 left-0 w-full overflow-hidden bg-transparent">
+    <MovingStrip />
+  </div>
+</div>
+
+
 
       <motion.div {...fadeUpDelay(1)}>
         <p className="text-center text-xl font-medium mt-6">Customers</p>
-        <p className="text-center text-3xl font-medium mt-2">
-          Our load bank cust<span className="text-gray-400">omers(2023-2024)</span>
-        </p>
-        <div className="w-full bg-white py-14">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-wrap justify-center gap-6">
-              {[Frame19, Frame20, Frame21, Frame22].map((img, idx) => (
-                <div key={idx} className="w-full sm:w-[48%] md:w-[23%] p-6 rounded-lg shadow-sm hover:shadow-lg transition">
-                  <img src={img} alt={`Client ${idx}`} className="h-full w-full object-contain" />
-                </div>
-              ))}
-            </div>
+        <ScrollRevealText
+    as="p"
+    text="Our load bank customers(2023-2024)"
+    className="text-center text-4xl font-semibold mt-2"
+    baseColor="#9CA3AF"
+    revealColor="#000000"
+  />
+      <div className="w-full py-14">
+  <div className="max-w-7xl mx-auto px-6">
+    
+    {/* NEGATIVE MARGIN ONLY ON md+ */}
+    <div className="ml-0 md:-ml-6">
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-3 md:gap-2">
+        {[Frame19, Frame20, Frame21, Frame22].map((img, idx) => (
+          <div
+            key={idx}
+            className="
+              w-full
+              sm:w-[48%]
+              md:w-[23%]
+              p-6
+              rounded-lg
+              shadow-sm
+              hover:shadow-lg
+              transition
+            "
+          >
+            <img
+              src={img}
+              alt={`Client ${idx}`}
+              className="w-full h-full object-contain"
+            />
           </div>
-        </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+          
+        
       </motion.div>
 
       {/* Bottom Section */}

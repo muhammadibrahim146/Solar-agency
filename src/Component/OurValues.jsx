@@ -59,7 +59,7 @@ const OurValues = () => {
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-white/40"></div>
+            <div className="absolute inset-0 bg-white/55"></div>
 
             {/* Content */}
             <div className="relative p-6 h-full flex flex-col justify-end text-white">

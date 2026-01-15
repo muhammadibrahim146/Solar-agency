@@ -59,10 +59,7 @@ const Footer = () => {
           <h4 className="text-white mb-4 font-semibold">Company</h4>
           <ul className="space-y-2 text-sm">
             <li>Home</li>
-            <li>Our Services</li>
-            <li>Projects</li>
             <li>About Us</li>
-            <li>Blog</li>
             <li>Contact</li>
           </ul>
         </div>
@@ -100,7 +97,7 @@ const Footer = () => {
       {/* BOTTOM BAR */}
       <div className="border-t border-gray-800 py-6 px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm gap-4">
-          <p>© 2025 – Solaria by BravisThemes.</p>
+          <p>© 2025 – Dynamic Innovation.</p>
           <div className="flex gap-6">
             <span>Terms & Conditions</span>
             <span>Privacy Policy</span>

@@ -15,7 +15,9 @@ import Frame20 from "../assets/Frame20.png";
 import Frame21 from "../assets/Frame21.png";
 import Frame22 from "../assets/Frame22.png";
 import { NavLink } from 'react-router-dom';
+import ProductImages from '../Component/ProductImages';
 
+import ScrollRevealText from '../Component/ScrollRevealText';
 
 
 const About = () => {
@@ -171,17 +173,26 @@ const About = () => {
 <div className="flex flex-col justify-start items-start h-full text-left px-8 md:px-16 lg:px-32 pt-24 relative z-20 space-y-4">
   <motion.p
     {...fadeUp}
-    className="text-gray-400 text-lg md:text-xl font-medium"
+    className="text-gray-100 text-lg md:text-xl font-medium  lg:mt-6"
   >
     Power your future with clean energy
   </motion.p>
 
   <motion.h1
     {...fadeUpDelay(0.3)}
-    className="text-white text-6xl md:text-6xl lg:text-7xl font-bold"
+    className="text-white text-6xl md:text-6xl lg:text-9xl font-bold  lg:mt-16 sm:text-5xl  -ml-5"
   >
     About Us
   </motion.h1>
+
+ <motion.p
+  {...fadeUp}
+  className="text-sm md:text-base font-medium  lg:mt-8  self-start -ml-4"
+>
+  <span className="text-gray-100 text-xl">Home</span><span className="text-red-500"> &gt;</span> <span className="text-gray-100 text-xl">About</span>
+</motion.p>
+
+
 </div>
 
 
@@ -190,26 +201,22 @@ const About = () => {
        <div className="w-full bg-white py-20 px-6 md:px-24">
               <div className="grid md:grid-cols-2 gap-14 items-start">
                 <div className="relative flex justify-center md:justify-start">
-                  <motion.img
-                    {...fadeUp}
-                    src={Container}
-                    alt="Server Hall Load Bank"
-                    className="w-[260px] md:w-[320px] rounded-xl shadow-md z-10"
-                  />
-                  <motion.img
-                    {...fadeUpDelay(0.2)}
-                    src={Rectangle}
-                    alt="Load Bank Side View"
-                    className="w-[200px] md:w-[260px] rounded-xl shadow-md absolute -bottom-8 right-0 md:right-20"
-                  />
+                  <ProductImages/>
                 </div>
       
                 <motion.div {...fadeUpDelay(0.3)}>
-                  <p className="text-lg text-gray-500 mb-3">Our products</p>
-      
-                  <h2 className="text-3xl md:text-4xl font-semibold text-black mb-6">
-                    Who W<span className="text-gray-400">e Are</span>
-                  </h2>
+  {/* NORMAL TEXT */}
+  <p className="text-lg text-black mb-3">Our products</p>
+
+  {/* SCROLL REVEAL TEXT */}
+  
+     <ScrollRevealText
+  as="h2"
+  text="Who We Are "
+  className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 text-left"
+/>
+
+
       
                   <p className="text-gray-600 leading-relaxed mb-6">
                  <p> Dynamic Innovations was founded with a simple belief: engineering should be reliable, intelligent, and built for the future.</p>
@@ -231,26 +238,34 @@ We deliver assurance, performance, and progress.
             </div>
       
       <motion.div {...fadeUp}>
-              <div>
-               <div className="w-full overflow-hidden">
-                <motion.img
-                  src={Background}
-                  className="w-[120%] max-w-none"
-                  animate={{ x: ["0%", "-20%"] }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                />
-              </div>
-      
-               
-      
+             <div>
+         <div className="relative w-full overflow-hidden h-[70px] md:h-[90px]">
+               <motion.div
+                 className="flex w-max"
+                 animate={{ x: ["0%", "-50%"] }}
+                 transition={{
+                   repeat: Infinity,
+                   ease: "linear",
+                   duration: 6, // 🔥 fast speed
+                 }}
+               >
+                 {/* duplicate images for infinite loop */}
+                 {[1, 2].map((_, index) => (
+                   <img
+                     key={index}
+                     src={Background}
+                     alt="strip"
+                     className="h-[70px] md:h-[90px] w-auto object-cover"
+                   />
+                 ))}
+               </motion.div>
+             </div>
+     
               
-                
-              </div>
-            </motion.div>
+     
+               
+             </div>
+           </motion.div>
       
       <div className="mt-10 px-6 md:px-24">
   <div className="flex flex-col md:flex-row gap-10">
@@ -283,10 +298,18 @@ We deliver assurance, performance, and progress.
 
   </div>
 </div>
-      <div className='mt-6'>
+      <div className='mt-8'>
         <p className='text-center text-xl font-medium text-black font-sans'>what makes us special</p>
      
-     <h1 className='text-center mt-5 text-black text-5xl'>Our V<span className='text-gray-400'>alues</span></h1>
+    <ScrollRevealText
+  as="h1"
+  className="text-center mt-5 text-5xl font-semibold"
+  baseColor="#9CA3AF"
+  revealColor="#000000"
+  text="Our Values" // first part, normal color after reveal
+/>
+
+
       </div>
       <div className='mt-5'>
         <OurValues/>
@@ -294,20 +317,48 @@ We deliver assurance, performance, and progress.
       </div>
         <motion.div {...fadeUpDelay(1)}>
         <p className="text-center text-xl font-medium mt-6">Customers</p>
-        <p className="text-center text-3xl font-medium mt-2">
-          Our load bank cust<span className="text-gray-400">omers(2023-2024)</span>
-        </p>
-        <div className="w-full bg-white py-14">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-wrap justify-center gap-6">
-              {[Frame19, Frame20, Frame21, Frame22].map((img, idx) => (
-                <div key={idx} className="w-full sm:w-[48%] md:w-[23%] p-6 rounded-lg shadow-sm hover:shadow-lg transition">
-                  <img src={img} alt={`Client ${idx}`} className="h-full w-full object-contain" />
-                </div>
-              ))}
-            </div>
+        <ScrollRevealText
+    as="p"
+    text="Our load bank customers(2023-2024)"
+    className="text-center text-4xl font-semibold mt-2"
+    baseColor="#9CA3AF"
+    revealColor="#000000"
+  />
+      <div className="w-full py-14">
+  <div className="max-w-7xl mx-auto px-6">
+    
+    {/* NEGATIVE MARGIN ONLY ON md+ */}
+    <div className="ml-0 md:-ml-6">
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-3 md:gap-2">
+        {[Frame19, Frame20, Frame21, Frame22].map((img, idx) => (
+          <div
+            key={idx}
+            className="
+              w-full
+              sm:w-[48%]
+              md:w-[23%]
+              p-6
+              rounded-lg
+              shadow-sm
+              hover:shadow-lg
+              transition
+            "
+          >
+            <img
+              src={img}
+              alt={`Client ${idx}`}
+              className="w-full h-full object-contain"
+            />
           </div>
-        </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+          
+        
       </motion.div>
 
       {/* Bottom Section */}
