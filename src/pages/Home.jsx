@@ -222,7 +222,7 @@ function Home() {
 </div>
 <div className="w-full flex justify-start ml-3">
 
-  <div className="">
+  <div className=" lg:ml-11">
     <AboutSection/>
 
   </div>

@@ -1,3 +1,4 @@
+import React, { useEffect, useRef, useState } from "react";
 import {
   motion,
   useInView,
@@ -5,50 +6,39 @@ import {
   useTransform,
   animate,
 } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-//import ScrollRevealText from "./ScrollRevealText";
 
-/* ---------- Animated Line ---------- */
-
-
-const ScrollRevealAnimatedLine = ({ text, className = "", delay = 0 }) => {
+/* ---------- SCROLL REVEAL TEXT ---------- */
+const ScrollRevealAnimatedLine = ({ text, delay = 0 }) => {
   const ref = useRef(null);
   const words = text.split(" ");
 
-  // Scroll progress for desktop/tablet
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start 85%", "end 35%"],
   });
-  const color = useTransform(scrollYProgress, [0, 1], ["#9CA3AF", "#000000"]); // grey → black
+
+  const color = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["#9CA3AF", "#000000"]
+  );
 
   return (
     <>
-      {/* MOBILE: staggered words animation */}
+      {/* MOBILE */}
       <motion.p
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        transition={{ staggerChildren: 0.07, delayChildren: delay }}
-        className={`
-          block md:hidden
-          text-sm sm:text-base
-          leading-relaxed
-          font-medium
-          whitespace-normal
-          ${className}
-        `}
+        transition={{ staggerChildren: 0.06, delayChildren: delay }}
+        className="block md:hidden text-[17px] font-semibold leading-relaxed text-black"
       >
         {words.map((word, i) => (
           <motion.span
             key={i}
             variants={{
               hidden: { opacity: 0, y: 4 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.25, ease: "easeOut" },
-              },
+              visible: { opacity: 1, y: 0 },
             }}
             className="inline-block mr-1"
           >
@@ -57,19 +47,11 @@ const ScrollRevealAnimatedLine = ({ text, className = "", delay = 0 }) => {
         ))}
       </motion.p>
 
-      {/* TABLET & DESKTOP: scroll-based color reveal */}
+      {/* TABLET + DESKTOP */}
       <motion.p
         ref={ref}
         style={{ color }}
-        className={`
-          hidden md:block
-          text-2xl
-          font-medium
-          leading-[1.35]
-          tracking-normal
-          whitespace-normal
-          ${className}
-        `}
+        className="hidden md:block text-[24px] font-semibold leading-snug"
       >
         {text}
       </motion.p>
@@ -77,27 +59,23 @@ const ScrollRevealAnimatedLine = ({ text, className = "", delay = 0 }) => {
   );
 };
 
-//export default ScrollRevealAnimatedLine;
-
-
-/* ---------- Count Up ---------- */
-const CountUp = ({ to, suffix = "", delay = 0 }) => {
+/* ---------- COUNT UP ---------- */
+const CountUp = ({ to, suffix = "" }) => {
   const ref = useRef(null);
   const [value, setValue] = useState(0);
-  const inView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
-    if (!inView) return;
+    if (!isInView) return;
 
     const controls = animate(0, to, {
       duration: 2,
-      delay,
       ease: "easeOut",
       onUpdate: (v) => setValue(Math.floor(v)),
     });
 
     return () => controls.stop();
-  }, [inView, to, delay]);
+  }, [isInView, to]);
 
   return (
     <span ref={ref}>
@@ -108,109 +86,98 @@ const CountUp = ({ to, suffix = "", delay = 0 }) => {
 };
 
 /* ---------- ABOUT SECTION ---------- */
-export default function AboutSection() {
-  const sectionRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [20, -20]);
-
+const AboutSection = () => {
   return (
-    <section
-      ref={sectionRef}
-      className="w-full py-16 sm:py-20 md:py-24 bg-white"
-    >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+    <section className="w-full bg-white py-20">
+      <div className="max-w-7xl mx-auto px-6">
 
-        {/* LEFT */}
-        <motion.div style={{ y }} className="md:col-span-1">
-          <h3 className="text-base sm:text-lg md:text-xl font-semibold uppercase tracking-wide text-black">
+        {/* TOP */}
+        <div className="flex flex-col lg:flex-row lg:gap-20">
+          <p className=" lg:text-xl sm:text-lg font-semibold text-black mb-6">
             About Us
-          </h3>
-        </motion.div>
-
-        {/* RIGHT */}
-        <div className="md:col-span-2 flex flex-col space-y-6">
+          </p>
 
           {/* TEXT */}
-          <div className="max-w-full md:max-w-lg lg:max-w-xl space-y-1 lg:space-y-0.5">
+          <div className="w-full lg:max-w-[980px] space-y-2">
+            <ScrollRevealAnimatedLine
+              text="We at ECOM Engineers Pvt. Ltd are mass producers of resistive load banks."
+            />
 
-          <ScrollRevealAnimatedLine
-  text="We at ECOM Engineers PvtLtd are mass producers of resistive load banks."
-  className="text-2xl font-medium"
-/>
+            <ScrollRevealAnimatedLine
+              text="Ranging from 6 KW up to 200 KW, these load banks are essential for"
+              delay={0.05}
+            />
 
-<ScrollRevealAnimatedLine
-  text="Ranging from 6 kW up to 200 kW, these load banks are essential for"
-  delay={0.05}
-/>
+            <ScrollRevealAnimatedLine
+              text="integrated system testing in datacentre server halls, battery test discharge,"
+              delay={0.1}
+            />
 
-<ScrollRevealAnimatedLine
-  text="integrated system testing in data centre server halls, battery discharge testing,"
-  delay={0.1}
-/>
+            <ScrollRevealAnimatedLine
+              text="generator testing, electric vehicle battery discharge and power supplies."
+              delay={0.15}
+            />
 
-<ScrollRevealAnimatedLine
-  text="generator testing, electric vehicle battery discharge, and power supplies."
-  delay={0.15}
-/>
-
-<ScrollRevealAnimatedLine
-  text="Testing solutions for EV & Hybrid Vehicles."
-  delay={0.2}
-/>
-
-
+            <ScrollRevealAnimatedLine
+              text="Testing solutions for EV & Hybrid Vehicles."
+              delay={0.2}
+            />
           </div>
+        </div>
 
-          {/* STATS */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8">
+        {/* STATS */}
+        <div className="flex flex-col sm:flex-row gap-9 mt-8 lg:ml-36">
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-black">
-                <CountUp to={100} suffix="K+" />
-              </h2>
-              <p className="mt-1 text-black">Panels Installed</p>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold text-black">
+              <CountUp to={100} suffix="K+" />
+            </h2>
+            <p className="text-gray-500 mt-1">Panels Installed</p>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-black">
-                <CountUp to={25} suffix="K+" delay={0.2} />
-              </h2>
-              <p className="mt-1 text-black">Plants Powered</p>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+          >
+            <h2 className="text-4xl font-bold text-black">
+              <CountUp to={25} suffix="K+" />
+            </h2>
+            <p className="text-gray-500 mt-1">Plants Powered</p>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-black">
-                <CountUp to={16} suffix="+" delay={0.4} />
-              </h2>
-              <p className="mt-1 text-black">Years of Expertise</p>
-            </motion.div>
-
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <h2 className="text-4xl font-bold text-black">
+              <CountUp to={16} suffix="+" />
+            </h2>
+            <p className="text-gray-500 mt-1">Years of Expertise</p>
+          </motion.div>
 
         </div>
+
       </div>
     </section>
   );
-}
+};
+
+export default AboutSection;
+
+
+
+
+
+
+
 
 
 
