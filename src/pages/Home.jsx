@@ -53,7 +53,7 @@ function Home() {
       {/* Hero Section */}
       <TopBar/>
       <div
-        className="h-screen w-screen bg-cover bg-center"
+        className="h-screen bg-cover bg-center"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         {/* Navbar */}
@@ -220,7 +220,7 @@ function Home() {
 </div>
 
 </div>
-<div className="w-full flex justify-start ml-3">
+<div className="w-full flex justify-start">
 
   <div className=" lg:ml-11">
     <AboutSection/>
@@ -285,18 +285,18 @@ function Home() {
 
 <div className="w-full bg-[#f8f4f2] relative overflow-hidden">
   {/* TOP SECTION */}
-  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch">
+  <div className="mx-auto flex flex-col lg:flex-row items-stretch">
     {/* LEFT IMAGE */}
-    <div className="w-full lg:w-[60%] h-[300px] lg:h-auto">
+    <div className="w-full lg:w-[55%] h-[300px] lg:h-auto">
       <img
         src={Container10}
         alt="Load Bank"
-        className="w-full h-full object-cover"
+        className="w-full h-full sm:h-[660px] object-cover"
       />
     </div>
 
     {/* RIGHT CONTENT */}
-    <div className="w-full lg:w-[40%] bg-[#f9f5f3] px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+    <div className="w-full lg:w-[40%] bg-[#f9f5f3] px-4 sm:px-6 lg:px-0 py-6 sm:py-8 lg:py-10">
       <div>
         <p className="text-sm sm:text-base text-gray-600 mb-2">
           Trusted & Affordable
