@@ -49,9 +49,9 @@ const About = () => {
 
         {/* Navbar */}
             <nav className="relative flex items-center p-4 border-b border-gray-300">
-  <div className="flex items-center z-10">
-    <img src={logoImage} alt="Logo" className="h-16 w-auto" />
-  </div>
+  <div className="flex items-center z-10 lg:ml-20  ">
+     <img src={logoImage} alt="Logo" className="h-16 w-auto  " />
+   </div>
 
   {/* Desktop Menu */}
   <ul className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-8 text-white font-medium">
@@ -199,7 +199,7 @@ const About = () => {
       </div>
 
        <div className="w-full bg-white py-20 px-6 md:px-24">
-              <div className="grid md:grid-cols-2 gap-14 items-start">
+              <div className="grid md:grid-cols-2 gap-0 items-start">
                 <div className="relative flex justify-center md:justify-start">
                   <ProductImages/>
                 </div>
@@ -213,7 +213,7 @@ const About = () => {
      <ScrollRevealText
   as="h2"
   text="Who We Are "
-  className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 text-left"
+  className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 text-left  w-[300px]"
 />
 
 
@@ -230,7 +230,7 @@ We deliver assurance, performance, and progress.
    </p>
                   </p>
       
-                  <hr className="my-6" />
+                
       
                
                 </motion.div>
@@ -278,9 +278,10 @@ We deliver assurance, performance, and progress.
       transition={{ duration: 0.8 }}
     >
       <h2 className="text-2xl md:text-3xl font-bold text-black mb-3">Our Vision</h2>
-      <p className="text-gray-600 leading-relaxed">
-        To be a trusted leader in innovative engineering solutions that power resilient infrastructure and enable the technologies of tomorrow.
-      </p>
+    <p className="text-gray-600 leading-relaxed w-[514px] h-[128px] font-normal text-[22px]">
+  To be a trusted leader in innovative engineering solutions that power resilient infrastructure and enable the technologies of tomorrow.
+</p>
+
     </motion.div>
 
     {/* Mission Box */}
@@ -291,19 +292,19 @@ We deliver assurance, performance, and progress.
       transition={{ duration: 0.8, delay: 0.3 }}
     >
       <h2 className="text-2xl md:text-3xl font-bold text-black mb-3">Our Mission</h2>
-      <p className="text-gray-600 leading-relaxed">
+      <p className="text-gray-600 leading-relaxed w-[514px] h-[128px] font-normal text-[22px]">
        To design, engineer, and deliver dependable, future-ready solutions that solve complex technical challenges—through expertise, innovation, and a commitment to excellence.
       </p>
     </motion.div>
 
   </div>
 </div>
-      <div className='mt-8'>
+      <div className='mt-16'>
         <p className='text-center text-xl font-medium text-black font-sans'>what makes us special</p>
      
     <ScrollRevealText
   as="h1"
-  className="text-center mt-5 text-5xl font-semibold"
+  className="text-center mt-8 text-5xl font-semibold "
   baseColor="#9CA3AF"
   revealColor="#000000"
   text="Our Values" // first part, normal color after reveal
@@ -337,10 +338,10 @@ We deliver assurance, performance, and progress.
               w-full
               sm:w-[48%]
               md:w-[23%]
-              p-6
+              p-2
               rounded-lg
-              shadow-sm
-              hover:shadow-lg
+              
+          
               transition
             "
           >

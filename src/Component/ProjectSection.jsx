@@ -32,10 +32,10 @@ const ProjectsSection = ({ Container7, Container8, Container9 }) => {
 
       {/* Project Title */}
       <ScrollReveal>
-        <p className="text-black text-center text-4xl font-medium mt-3">
+        <p className="text-black text-center text-4xl font-semibold mt-3">
           BULK LOAD BANK 500KW<span>-3200KW Resistive or</span>
         </p>
-        <p className="text-black text-center text-4xl font-medium mt-3">
+        <p className="text-black text-center text-4xl font-semibold mt-3">
           With 0.8PF for generator<span> testing.440V -11KV</span>
         </p>
       </ScrollReveal>
@@ -51,17 +51,17 @@ const ProjectsSection = ({ Container7, Container8, Container9 }) => {
       </ScrollReveal>
 
       {/* Customer Logos */}
-      <div className="-ml-12 ">
+      <div className=" lg:-ml-12 xl:-ml-14 mt-5">
      <div className="mt-8 px-0">
-  <div className="flex flex-wrap justify-center gap-1 md:gap-2 lg:gap-2">
+  <div className="flex flex-wrap justify-center gap-1 md:gap-2 lg:gap-4">
     {[Container7, Container8, Container9].map((img, idx) => (
       <img
         key={idx}
         src={img}
         alt={`Customer ${idx}`}
         className="
-          w-52 sm:w-56 md:w-60 lg:w-64 xl:w-72 2xl:w-80
-          h-auto
+           sm:w-56 md:w-60 lg:w-90 xl:w-[409px]h-[493px] 2xl:w-96
+          
           object-contain
         "
       />

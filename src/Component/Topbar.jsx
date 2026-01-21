@@ -11,7 +11,7 @@ import {
 
 const TopBar = () => {
   return (
-    <div className="hidden lg:block bg-[#f0353a] text-white text-sm">
+    <div className="hidden lg:block bg-[#f0353a] text-white text-sm w-screen">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between px-6 py-2">
         
         {/* Left Section */}

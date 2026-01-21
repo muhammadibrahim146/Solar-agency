@@ -31,7 +31,7 @@ const ScrollRevealAnimatedLine = ({ text, delay = 0 }) => {
         whileInView="visible"
         viewport={{ once: true }}
         transition={{ staggerChildren: 0.06, delayChildren: delay }}
-        className="block md:hidden text-[17px] font-semibold leading-relaxed text-black"
+        className="block md:hidden text-[17px] font-bold leading-relaxed text-black"
       >
         {words.map((word, i) => (
           <motion.span
@@ -89,16 +89,18 @@ const CountUp = ({ to, suffix = "" }) => {
 const AboutSection = () => {
   return (
     <section className="w-full bg-white py-20">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-max mx-auto px-6">
 
         {/* TOP */}
-        <div className="flex flex-col lg:flex-row lg:gap-20">
-          <p className=" lg:text-xl sm:text-lg font-semibold text-black mb-6">
-            About Us
-          </p>
+        <div className="flex flex-col lg:flex-row lg:gap-20 justify-center ">
+         <p className="text-sm font-medium lg:ml-16 text-black mb-6 lg:mb-0 lg:w-[120px] shrink-0 lg:text-lg">
+  About Us
+</p>
+
 
           {/* TEXT */}
-          <div className="w-full lg:max-w-[980px] space-y-2">
+          
+          <div className="w-full lg:max-w-svw space-y-2 xl:ml-44">
             <ScrollRevealAnimatedLine
               text="We at ECOM Engineers Pvt. Ltd are mass producers of resistive load banks."
             />
@@ -126,7 +128,7 @@ const AboutSection = () => {
         </div>
 
         {/* STATS */}
-        <div className="flex flex-col sm:flex-row gap-9 mt-8 lg:ml-36">
+        <div className="flex flex-col sm:flex-row gap-9 mt-8   lg:mt-14  lg:ml-60 lg:gap-36 lg:justify-center ">
 
           <motion.div
             initial={{ opacity: 0, y: 18 }}

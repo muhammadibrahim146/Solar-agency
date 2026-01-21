@@ -14,7 +14,8 @@ const ProductImages = () => {
   const overlay = useParallaxMouse(6);
 
   return (
-    <div className="relative w-full max-w-[520px] aspect-[4/5] mx-auto overflow-visible [perspective:1200px]">
+    <div className="relative w-full max-w-[520px] aspect-[4/5] mx-auto overflow-visible [perspective:1200px]   ">
+
 
       {/* RECTANGLE – BACK IMAGE */}
       <motion.div
@@ -23,8 +24,8 @@ const ProductImages = () => {
         whileInView="visible"
         viewport={{ once: true }}
         style={{
-          width: "58%",
-          bottom: "2%",
+          width: "70%",
+          top: "10%",
           right: "0%",
           rotateX: overlay.rotateX,
           rotateY: overlay.rotateY,
@@ -47,9 +48,9 @@ const ProductImages = () => {
         whileInView="visible"
         viewport={{ once: true }}
         style={{
-          width: "78%",
-          top: "0%",
-          left: "0%",
+          width: "58% ",
+          top: "2%",
+          left: "-5%",
           y,
           rotateX: main.rotateX,
           rotateY: main.rotateY,
@@ -68,7 +69,7 @@ const ProductImages = () => {
     </div>
   );
 };
-
+``
 export default ProductImages;
 
 

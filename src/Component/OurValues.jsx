@@ -15,25 +15,25 @@ const values = [
     img: frame251,
   },
   {
-    id: "02",
+    id: "01",
     title: "Innovation with Purpose",
     desc: "Innovation is meaningful only when it solves real problems. We design smarter solutions that add measurable value.",
     img: Frame261,
   },
   {
-    id: "03",
+    id: "01",
     title: "Reliability & Trust",
     desc: "Our clients depend on us in critical moments. We honour that trust with consistency, transparency, and accountability.",
     img: Frame271, // fallback
   },
   {
-    id: "04",
+    id: "01",
     title: "People at the Core",
     desc: "Great engineering is built by great people. We invest in talent, teamwork, and continuous learning.",
     img: Frame281, // fallback
   },
   {
-    id: "05",
+    id: "01",
     title: "Future-Ready Thinking",
     desc: "We anticipate change, embrace new technologies, and design solutions that stand the test of time.",
     img: Frame291, // fallback
@@ -55,7 +55,7 @@ const OurValues = () => {
             <img
               src={item.img}
               alt={item.title}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-center"
             />
 
             {/* Overlay */}
@@ -63,7 +63,7 @@ const OurValues = () => {
 
             {/* Content */}
             <div className="relative p-6 h-full flex flex-col justify-end text-white">
-              <span className="absolute top-5 right-6 text-xs text-gray-200">
+              <span className="absolute top-80 left-6 text-xs text-gray-200">
                 {item.id}
               </span>
 

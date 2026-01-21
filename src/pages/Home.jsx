@@ -32,6 +32,8 @@ import CountUp from "../Component/CountUp";
 import AboutSection from "../Component/AboutSection";
 import ProductFeature from "../Component/ProductFeature";
 import ProjectsSection from "../Component/ProjectSection";
+import load from "../assets/load.jpg"
+import man from"../assets/man.png"
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -57,9 +59,9 @@ function Home() {
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         {/* Navbar */}
-       <nav className="relative flex items-center p-4 border-b border-gray-300">
-  <div className="flex items-center z-10">
-    <img src={logoImage} alt="Logo" className="h-16 w-auto" />
+       <nav className="relative flex items-center p-3 border-b border-gray-300">
+  <div className="flex items-center z-10 lg:ml-20  ">
+    <img src={logoImage} alt="Logo" className="h-16 w-auto  " />
   </div>
 
   {/* Desktop Menu */}
@@ -179,15 +181,17 @@ function Home() {
 <div className="relative flex flex-col justify-center h-full min-h-[420px] px-6 md:px-20 text-white">
 
   {/* TEXT */}
-  <motion.p {...fadeUp} className="max-w-3xl text-sm md:text-base mb-4">
+  <motion.p {...fadeUp} className="max-w-4xl text-sm md:text-lg xl:text-lg xl:mb-11 lg:mb-11 ">
     From 6 kW to 3.2 MW, we design and manufacture resistive and smart load banks
-    for data centers, generators, EV systems, UPS, and high-voltage testing.
+    for data centers, generators, EV systems, UPS, and high-voltage testing-engineered for relaibilty,safety,and
+    continuous operation
   </motion.p>
+
 
   {/* HEADING */}
   <motion.h1
     {...fadeUpDelay(0.2)}
-    className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-wide mb-6"
+    className="sm:text-4xl md:text-6xl xl:text-8xl font-medium tracking-wide mb-6"
   >
     RESISTIVE LOAD BANKS
   </motion.h1>
@@ -211,6 +215,7 @@ function Home() {
         rounded-lg
         text-base sm:text-lg
         transition duration-300
+        
       "
     >
       Get Started Now
@@ -220,13 +225,13 @@ function Home() {
 </div>
 
 </div>
-<div className="w-full flex justify-start ml-3">
-
-  <div className=" lg:ml-11">
+<div className="w-full flex justify-start ml-3  lg:gap-6">
+<div>
+  <div className="  ">
     <AboutSection/>
 
   </div>
-
+</div>
 </div>
 <div className="w-full h-[1px] bg-gray-300 my-6"></div>
 <div className="lg:-ml-6 ">
@@ -267,13 +272,116 @@ function Home() {
       <motion.div {...fadeUpDelay(0.5)} className="">
         <Product />
       </motion.div>
+
+       <motion.div {...fadeUpDelay(0.5)} className=" ]">
+      <Product1/>
+      </motion.div>
       <motion.div {...fadeUpDelay(0.6)} className="">
       
       </motion.div>
 
       {/* Horizontal Image */}
-      <motion.div {...fadeUpDelay(0.7)} className="mt-5">
-        <img src={horizaontal} alt="Horizontal Image" className="w-full h-auto" />
+      <motion.div {...fadeUpDelay(0.7)} className="mt-150">
+      
+    <section className="w-full bg-[#ff4b55] min-h-screen flex items-center py-24">
+      <div className="max-w-[1400px] mx-auto w-full px-10 grid lg:grid-cols-2 gap-2 items-start">
+
+        {/* LEFT IMAGE BLOCK */}
+        <div className="relative flex justify-center lg:justify-start">
+          <img
+            src={load}
+            alt="Load Bank"
+            className="w-[560px] rounded-[28px] mt-[-10px] h-[554px]"
+          />
+
+          <img
+            src={man}
+            alt="Engineer"
+            className="absolute bottom-[-60px] right-[40px] w-[260px] rounded-[22px] shadow-2xl"
+          />
+        </div>
+
+        {/* RIGHT CONTENT */}
+        <div className="text-white">
+          <p className="text-sm font-medium mb-4 opacity-90">
+            Trusted & Affordable
+          </p>
+
+          <h2 className="text-[44px] font-medium leading-[1.2] mb-12 h-[58px]">
+            Benefits of smart load banks
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-10 -mt-5">
+
+            <div>
+              <h4 className="text-lg font-semibold mb-2">
+                Minimized Setup Time
+              </h4>
+              <p className="text-sm leading-relaxed opacity-90">
+                Certified professionals with years of solar installation experience.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-2">
+                Automated Transition,
+              </h4>
+              <p className="text-sm leading-relaxed opacity-90">
+                reducing transition time from 20 minutes to less than 30 seconds
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-2">
+                Graph Printing
+              </h4>
+              <p className="text-sm leading-relaxed opacity-90">
+                Allows Users To Print Graphs For Analysis And Reporting
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-2">
+                Real-time Data
+              </h4>
+              <p className="text-sm leading-relaxed opacity-90">
+                Simultaneously monitors load, voltage, current, and temperature.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-2">
+                Smart Monitoring and Control
+              </h4>
+              <p className="text-sm leading-relaxed opacity-90">
+                Resistive Load Banks feature an advanced monitoring and control system, accessible via tablet or mobile device.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-2">
+                Wireless Connectivity
+              </h4>
+              <p className="text-sm leading-relaxed opacity-90">
+                Connects to a central control console through a wireless access point
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-2">
+                Environmentally Friendly
+              </h4>
+              <p className="text-sm leading-relaxed opacity-90">
+                Reducing Carbon Footprint
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
       </motion.div>
 
       {/* Projects Section */}
@@ -283,30 +391,30 @@ function Home() {
   Container9={Container9}
 />
 
-<div className="w-full bg-[#f8f4f2] relative overflow-hidden">
+<div className="w-full  relative overflow-hidden">
   {/* TOP SECTION */}
-  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch">
+  <div className="mx-auto flex flex-col lg:flex-row items-stretch">
     {/* LEFT IMAGE */}
-    <div className="w-full lg:w-[60%] h-[300px] lg:h-auto">
+    <div className="w-full lg:w-[55%] h-[300px] lg:h-auto -left-3">
       <img
         src={Container10}
         alt="Load Bank"
-        className="w-full h-full object-cover"
+        className="w-[758px] h-[768px] sm:h-[660px] object-center"
       />
     </div>
 
     {/* RIGHT CONTENT */}
-    <div className="w-full lg:w-[40%] bg-[#f9f5f3] px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+    <div className="w-[1032px]  ml-[-200px] h-[609px] bg-[#f9f5f3] px-4 sm:px-6 lg:px-0 py-6 sm:py-8 lg:py-10">
       <div>
-        <p className="text-sm sm:text-base text-gray-600 mb-2">
+        <p className="text-sm sm:text-base text-gray-600 mb-2 ml-[50px]">
           Trusted & Affordable
         </p>
 
-        <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4 sm:mb-6">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4 sm:mb-6 ml-[50px]">
           11KV Load bank Smart feature
         </h2>
 
-        <ul className="text-base sm:text-lg text-gray-800 leading-relaxed">
+        <ul className="text-base sm:text-lg text-gray-800 leading-relaxed  ml-[50px]">
           <li>Automatic Load Ramping Program by user</li>
           <li>Monitoring & Control through tablet</li>
           <br className="hidden sm:block" />
@@ -325,10 +433,11 @@ function Home() {
   </div>
 
   {/* 🔥 MOVING STRIP */}
-  <div className="absolute bottom-0 left-0 w-full overflow-hidden bg-transparent">
+  <div className="absolute bottom-3 left-0 w-full overflow-hidden bg-transparent">
     <MovingStrip />
   </div>
 </div>
+
 
 
 
@@ -346,7 +455,7 @@ function Home() {
     
     {/* NEGATIVE MARGIN ONLY ON md+ */}
     <div className="ml-0 md:-ml-6">
-      <div className="flex flex-wrap justify-center gap-4 sm:gap-3 md:gap-2">
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-1">
         {[Frame19, Frame20, Frame21, Frame22].map((img, idx) => (
           <div
             key={idx}
@@ -354,10 +463,10 @@ function Home() {
               w-full
               sm:w-[48%]
               md:w-[23%]
-              p-6
+              p-2
               rounded-lg
-              shadow-sm
-              hover:shadow-lg
+              
+              
               transition
             "
           >

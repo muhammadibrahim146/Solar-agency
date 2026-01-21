@@ -108,74 +108,147 @@ const Product = () => {
       <ScrollRevealText
         as="h2"
         text="FEATURED PRODUCTS"
-        className="text-center text-4xl md:text-5xl font-semibold tracking-widest"
+        className="text-center text-4xl md:text-5xl font-semibold tracking-widest mt-8"
       />
 
-      <p className="text-center text-gray-400 mt-4 max-w-xl mx-auto text-sm md:text-base px-4">
-        Switch to solar and enjoy lower bills, clean energy, and expert service
-        designed for homes, businesses, and beyond.
+      <p className="text-center text-gray-400 max-w-3xl mx-auto text-sm md:text-base px-4 mt-10 ">
+  Switch to solar and enjoy lower bills, clean energy, and expert service designed
+  <br />
+<div className="mt-2">
+  for homes, businesses, and beyond.
+</div>
+  </p>
+<div className="
+  flex
+  flex-col
+  md:flex-row md:flex-wrap
+  lg:flex-nowrap
+  w-full
+  justify-start
+  gap-8
+  px-4 md:px-8 lg:px-12
+  mt-8 
+  lg:ml[83px]
+  xl:ml-[85px]
+">
+
+  {/* CARD 1 */}
+  <div className="relative flex justify-center w-full md:w-auto ">
+    
+    <img
+      src={Container1}
+      className="w-[
+410.66px] h-[
+410.66px] object-cover rounded-[15px]"
+    />
+
+    <div className="
+      w-[370px] h-[397px]
+      bg-white/95
+      text-black
+      absolute
+      left-2
+      top-[308px]
+      p-4
+      backdrop-blur-sm
+      border border-black/10
+      rounded-[15px]
+      shadow-lg
+    ">
+      <p className="w-[298px] text-[22px] font-semibold">
+        Small Portable Rack mountable . For Server Hall
       </p>
 
-      {/* GRID */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-8 gap-y-20 sm:gap-y-24 mt-24 px-4 sm:px-6">
-        {products.map((item, index) => (
-          <motion.div
-            key={index}
-            custom={index}
-            variants={cardAnim}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className={`group relative ${item.wide ? "lg:col-span-2" : ""}`}
-          >
-            {/* IMAGE */}
-            <motion.img
-              src={item.image}
-              alt={item.title}
-              whileHover={{ scale: 1.06 }}
-              transition={{ duration: 0.5 }}
-              className={`
-                w-full object-cover rounded-[32px]
-                /* MOBILE height */
-                h-[320px] sm:h-[360px] md:h-[400px]
-                /* LAPTOP+ height */
-                lg:h-[460px] xl:h-[480px]
-                /* WIDE CARD height override */
-                ${item.wide
-                  ? "sm:h-[360px] md:h-[400px] lg:h-[520px] xl:h-[540px]"
-                  : ""
-                }
-              `}
-            />
+      <p className="w-[328px] text-[20px] leading-[36px] text-[#606060] mt-4">
+        Capacity : 125V DC—15KW <br />
+        Voltages Available : 12—150VDC & 120VAC—240VAC <br />
+        Frequency : 50 / 60 Hz (Optional) <br />
+        Load Type : Resistive Bank <br />
+        Power Factor : 1 <br />
+        Load Steps : 1KW , 2KW, 3KW <br />
+        3Phase optional Splitter Box 
+      </p>
+    </div>
+  </div>
 
+  {/* CARD 2 */}
+ 
+  <div className="relative flex justify-center w-full md:w-auto">
+    
+    <img
+      src={Container2}
+      className="w-[410.66px] h-[410.66px] object-cover rounded-[15px]"
+    />
+
+    <div className="
+      w-[370px] h-[420px]
+      bg-white/95
+      text-black
+      absolute
+      left-2
+      top-[299px]
+      p-4
+      backdrop-blur-sm
+      border border-black/10
+      rounded-[15px]
+      shadow-lg
+    ">
+      <p className="w-[298px] text-[22px] font-semibold">
+        Server Hall Bank 9KW – 15KW
+      </p>
+
+      <p className="w-[314px] text-[20px] leading-[36px] text-[#606060] mt-4 h-[540px] top-[128px]">
+       Capacity : 125V DC / 230 / 415V Ac 9 KW —15KW ​
+Voltages Available : 240VAC / 425VAC. ​
+Frequency : 50 / 60 Hz (Optional)​
+Loat Type : Resistive Bank.​
+Power Factor : 1​
+Load Steps : ,3KW + 3KW +3 KW + 3KW + 3KW ​
+
+
+      </p>
+    </div>
+  </div>
+  {/* CARD 3 */}
+  <div className="relative flex justify-center w-full md:w-auto">
+    
+    <img
+      src={Container3}
+      className="w-[410.66px] h-[410.66px] object-cover rounded-[15px]"
+    />
+
+    <div className="
+      w-[384px] h-[430px]
+      bg-white/95
+      text-black
+      absolute
+      left-2
+      top-[300px]
+      p-4
+      backdrop-blur-sm
+      border border-black/10
+      rounded-[15px]
+      shadow-lg
+    ">
+      <p className="w-[298px] text-[22px] font-semibold">
+        SERVER HALL BANK 18KW​
+      </p>
+
+      <p className="w-[314px] text-[20px] leading-[36px] text-[#606060] h-[288px] mt-4">
+      OPERATING VOLTAGE : 415VAC ​ Voltages Available : 415 VAC ​ Frequency : 50 / 60 Hz​ Loat Type : Resistive Bank.​ Power Factor : 1​ Load Steps : ,4KW +2 KW , + 4KW +2KW . + 4KW +2KW ​ CFM : 3150CFM ​ Digital Control through webserver Software : Optional
+      </p>
+    </div>
+  </div>
+
+</div>
+
+
+     
             {/* FLOAT CARD */}
-            <motion.div
-              whileHover={{ y: -6 }}
-              transition={{ type: "spring", stiffness: 160 }}
-              className={`
-                absolute left-3 sm:left-4 right-3 sm:right-4
-                /* MOBILE & TABLET spacing */
-                -bottom-4 sm:-bottom-6 md:-bottom-6
-                /* LAPTOP+ spacing */
-                ${item.wide ? "lg:-bottom-6 xl:-bottom-8" : "lg:-bottom-16"}
-                bg-white rounded-2xl p-4 sm:p-5 md:p-6
-                shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-                /* Scrollable description ONLY for mobile/tablet */
-                ${item.wide ? "overflow-y-auto max-h-[180px] sm:max-h-[200px] lg:overflow-visible lg:max-h-full" : ""}
-              `}
-            >
-              <h3 className="text-[14px] sm:text-[14.5px] font-semibold text-gray-900 leading-snug">
-                {item.title}
-              </h3>
+<div>
+  
+  
 
-              <ul className="mt-3 sm:mt-4 space-y-1 text-[12px] sm:text-[13px] text-gray-600 leading-relaxed">
-                {item.desc.map((line, i) => (
-                  <li key={i}>{line}</li>
-                ))}
-              </ul>
-            </motion.div>
-          </motion.div>
-        ))}
       </div>
     </section>
   );
